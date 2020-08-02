@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorcado</title>
+</head>
+<body>
+    <h1> El ahorcado</h1>
+    <script>
+        var palabras=["canto", "bosque", "silla", "profesor"]
+        var palabraincognita=palabras[Math.floor(Math.random()*palabras.length)]
+        var letrasincognitas=[];
+        for (var i=0; i <palabraincognita.length; i++){
+            letrasincognitas[i]="_";
+        var numerodeletras=palabraincognita.length;
+        }
+        while(numerodeletras > 0){
+            alert(letrasincognitas.join(" "));
+            var letraingresada=prompt("adivina una letra")
+            if (letraingresada===null){
+                break;
+            }else if (letraingresada.length !==1){
+                alert("Solo 1 letra");
+            }else{
+                for (var j=0; j< palabraincognita.length; j++){
+                    if (palabraincognita[j]===letraingresada){
+                        letrasincognitas[j]=letraingresada;
+                        numerodeletras--;
+                    }
+                }
+            }
+        }
+        alert(letrasincognitas.join(" "));
+        alert("Bien hecho, la respuesta fue " + palabraincognita);
+    </script>
+</body>
+</html>
